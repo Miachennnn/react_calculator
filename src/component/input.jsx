@@ -10,9 +10,10 @@ export default class Input extends React.Component {
             {element.map((text, index) => (
               <OprateButton
                 className={text !== "0" ? "btn" : "btn wide"}
-                type={(index + 1) % 4 !== 0 ? "" : "orange"}
+                next={(index + 1) % 4 !== 0 ? false : true}
                 name={text}
                 key={text}
+                onClick={e => this.props.onClickBtn(e)}
               />
             ))}
           </div>
